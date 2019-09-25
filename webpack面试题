@@ -63,3 +63,52 @@ https://www.jianshu.com/p/64dfb0d4197d
     
 
 11. 常用 loader 和 plugin 作用汇总简介
+    css-loader：主要用于处理图片路径（包括导入 css 文件的路径），并且会将 css 样式打包进 js 文件中（以模块的形式打包导入）。
+    
+    style-loader:通过 <style> 标签将 css 插入到 DOM 中。建议 style-loader 与 css-loader 结合使用。
+    
+    postcss-loader:我们编写 css 时为了兼容不同浏览器会加上前缀比如 -webkit 等。postcss 会帮我们自动加上前缀，不用一个一个的手动添加。
+    
+    sass-loader:加载 sass/scss 文件并且变异成 css。
+    
+    vue-loader: 是一个 webpack 的 loader，它允许你以一种名为单文件组件 (SFCs)的格式撰写 Vue 组件。
+    Vue Loader 的配置和其它的 loader 不太一样。除了通过一条规则将 vue-loader 应用到所有扩展名为 .vue 的文件上之外，请确保在你的 webpack 配置中添加 Vue Loader 的插件：
+    
+    vue-style-loader:vue-style-loader 是基于 style-loader 的，与 style-loader 相似，你可以链式的加在 css-loader 后面，通过 <style> 标签动态的将 css 注入到 document 中。因为它会作为一个内置的依赖被vue-loader 使用，所以通常你不需要自己手动的配置它。
+    
+    eslint-loader:让 webpack 支持 eslint。
+    
+    svg-sprite-loader:创建 SVG 雪碧图。
+    
+    file-loader:如果我们希望在页面引入图片（包括img的src和background的url）。当我们基于webpack进行开发时，引入图片会遇到一些问题。
+    
+    url-loader:将 文件转换成 base64 URI。
+    
+
+    
+    
+    
+    
+    mini-css-extract-plugin:mini-css-extract-plugin:将 css 提取为独立的文件，对每个包含 css 的js文件都会创建一个 css 文件。支持按需加载 css 和 sourceMap。暂不支持 HMR。
+
+    node-notifier:是 node 模块，用 node.js 发送跨平台（包括 maxOS、Windows、Linux）的原生的通知。
+    
+    uglify-webpack-plugin:压缩 javascript
+    
+    optimize-css-assets-webpack-plugin：用于优化压缩 css 资源
+    
+    clean-webpack-plugin：在每次构建前清理 /dist 文件夹，是比较推荐的做法，因此只会生成用到的文件。
+    
+    babel-polyfill:
+    
+    **webpack.ProvidePlugin: **自动加载模块，而不必到处 import 和 require。
+    
+    copy-webpack-plugin：把我们自己建的文件或是整个目录复制到打包目录下。
+    
+    webpack-bundle-analyzer：会给你打包后的 bundles 创建一个可交互的 树形映射图，来查看究竟打包了写什么，哪些体积比较大等，便于优化。像这样。
+    
+    
+
+
+
+
